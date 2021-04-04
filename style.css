@@ -149,6 +149,10 @@ nav.link {
 	padding: 0px 2px;
 	border-radius: 3px;
 }
+.box-left .member-meta a {
+	padding-bottom: 0!important;
+	border: 0!important;
+}
 .info {
 	text-align: center;
 	line-height: 1.5;
@@ -252,6 +256,11 @@ footer {
 }
 
 
+
+#comment .window-content {
+	width: 30vw;
+}
+
 @media (max-width:650px) {
 	.main div.box {
 		display: initial;
@@ -263,4 +272,85 @@ footer {
 	.window .window-content {
 		width: 80vw;
 	}
+	#comment .window-content {
+		width: 80vw;
+	}
+}
+
+
+
+
+
+/**
+ * 重写评论样式
+ */
+.comment .vheader input,.comment button,.comment textarea {
+	color: #bbb!important;
+}
+.v[data-class=v] .vwrap {
+	border-style: none!important;
+}
+.v[data-class=v] .veditor {
+	min-height: 4em;
+	background: #353B48!important;
+	color: #bbb!important;
+	padding: 10px!important;
+	border-radius: 0;
+}
+.v[data-class=v] .vrow .vcol.vcol-30 {
+	display: none;
+}
+.v[data-class=v] .vrow .vcol.vcol-70 {
+	width: 100%!important;
+	color: #bbb!important;
+	background: #2e333e;
+}
+.v[data-class=v] .vbtn {
+	border-style: none!important;
+	border-radius: 0!important;
+	width: 100%;
+	outline: none;
+	background: none!important;
+}
+.v[data-class=v] .vcards .vcard .vhead .vsys {
+	display: none;
+}
+.v[data-class=v] .txt-right {
+	display: none;
+}
+.v[data-class=v] .vcards .vcard .vimg {
+	border-radius: 2px!important;
+	box-shadow: 0 0 5px 1px #666;
+	padding: 1px!important;
+}
+.v[data-class=v] .vwrap .vheader {
+	background: #2E333E;
+}
+.v[data-class=v] .vwrap .vheader .vinput {
+	width: 50%!important;
+	border-bottom: none!important;
+	border-radius: 0;
+}
+.v[data-class=v] .vwrap .vheader .vmail {
+	display: none;
+}
+.v[data-class=v] .vrow {
+	padding: 0!important;
+}
+.v[data-class=v] .vwrap .vedit {
+	display: grid;
+	padding-top: 0!important;
+}
+.v[data-class=v] .vrow .vcol.vctrl {
+	display: none;
+}
+.v[data-class=v] .vcards {
+	padding: 0 15px!important;
+}
+.v[data-class=v] .vcards .vcard .vcontent p {
+	color: #555!important;
+}
+.v[data-class=v] .vwrap {
+	border-radius: 0!important;
+	padding: 0!important;
 }
