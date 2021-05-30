@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>行空/工作室</title>
+		<link rel="icon" type="icon" href="favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<div id="configReady">
+		<header>
+			<nav class="link">
+				<a href="">首页</a>
+				<a href="#JoinThestudio">入室</a>
+				<div id="JoinThestudio" class="window">
+					<div class="window-content">
+						<div class="head">
+							<p class="window-title">加入工作室</p>
+							<a href="#">close</a>
+						</div>
+						<div>
+							<h3><sup>/</sup> 说明 <sub>/</sub></h3>
+							<p>这是一个非常小的工作室，未来会有很大的变化，有可能会消失不见，有可能会飞黄腾达，都说不准。<br>而且工作室现在没有任何经济来源，无法维持需要金钱的项目。</p>
+							<p>加入工作室后，你会觉得非常无聊，因为现在根本没有项目可做，经常冷群。<br>我估计想要发展成大工作室是需要几十年，前提是没有非常大的阻碍。</p>
+							
+							<h3><sup>/</sup> 申请 <sub>/</sub></h3>
+							<p>发送邮件到<a href="mailto:2823938971@qq.com?subject=入室申请">2823938971@qq.com</a></p>
+							<p><b>内容要素：</b>
+								<ul>
+									<li>你的名称（不必是真名）</li>
+									<li>年龄</li>
+									<li>技能（如：Python、Java、C++等）</li>
+									<li>其它你想说的内容</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+				<a href="#comment">留言</a>
+				<div id="comment" class="window">
+					<div class="window-content">
+						<div class="head">
+							<p class="window-title">留言</p>
+							<a href="#">close</a>
+						</div>
+						<div>
+							<div id="vcomments"><iframe src="https://www6.cbox.ws/box/?boxid=863869&boxtag=arLYbR" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="title">
+				<div class="title-top">{{ title }}</div>
+				<div class="title-center">{{ subtitle }}</div>
+				<div class="title-bottom">{{ title }}</div>
+			</div>
+		</header>
+		
+		<div class="main">
+			<div class="info" v-html="info"></div>
+			
+			<div class="box">
+				<div class="box-left">
+					<div class="info-card">
+						<h3>卡片</h3>
+						<div class="content">
+							<p><b>名称</b>: <span v-html="infoCard.name"></span></p>
+							<p><b>时间</b>: {{ infoCard.starttime }}</p>
+							<p><b>创始人</b>: {{ infoCard.founder }}</p>
+							<p><b>主业</b>: {{ infoCard.business }}</p>
+							<p><b>副业</b>: {{ infoCard.otherBusiness }}</p>
+							<p><b>简介</b>:<br/>&emsp;&emsp;
+								{{ infoCard.introduction }}
+							</p>
+						</div>
+						<span id="uptime"></span>
+					</div>
+					<div class="member">
+						<h3>主要成员</h3>
+						<div class="content">
+							<ul style="padding-left: 0;">
+								<template v-for="members in member">
+								<li>
+									<img :src="members.avatarUrl">
+									<div class="member-meta">
+										<p><a :href="members.website">{{ members.name }}</a> <span class="badge">{{ members.badge }}</span></p>
+										<p>{{ members.content }}</p>
+									</div>
+								</li>
+								</template>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="box-right">
+					<div class="work">
+						<h3>作品</h3>
+						<div class="content">
+							<p>NONE</p>
+						</div>
+					</div>
+					
+					<div class="course">
+						<h3>记事本</h3>
+						<ul>
+							<template v-for="courses in course">
+								<li><time>{{ courses.time }}</time>{{ courses.text }}</li>
+							</template>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<p style="text-align: center;color: #778ca3;">Copyright <strong style="color: #778ca3;">龙介LongJie & SKY Studio</strong> All Rights Reserved.</p>
+			<p style="text-align: center;color: #778ca3;">服务器：GitHub Page [ <span id="website_uptime" style="color: #778ca3;"></span> ]</p>
+		</footer>
+		</div>
+		
+		<!-- Javascript加载区 -->
+		<div>
+			<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+			<script type="text/javascript">
+				function DateDiff(start){
+					start = new Date(start);	
+					end = new Date();
+					if(end > start){
+						days = parseInt(Math.abs(end - start) / 1000 / 60 / 60 / 24);
+					}else{
+						days = '0';
+					}	
+					return days;
+				};
+				document.getElementById('uptime').innerText = DateDiff('2018-11-05') + ' 天';
+				document.getElementById('website_uptime').innerText = DateDiff('2021-03-05') + ' Days';
+			</script>
+			<script src="//unpkg.com/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+			<script src="./_config.js" type="text/javascript" charset="utf-8"></script>
+		</div>
+	</body>
+</html>
